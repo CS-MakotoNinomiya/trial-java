@@ -1,0 +1,17 @@
+{
+  "arrayVal": [
+    1,
+    2,
+    3
+  ],
+  "booleanVal": true,
+  "colorVal": "#82b92c",
+  "nullVal": null,
+  "numberVal": 123,
+  "objectVal": {
+    "aa": "bb",
+    "cc": "dd",
+    "ee": "ff"
+  },
+  "stringVal": "Hello World"
+}
