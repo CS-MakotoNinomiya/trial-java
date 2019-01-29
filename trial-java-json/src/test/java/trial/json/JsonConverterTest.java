@@ -19,7 +19,7 @@ import org.junit.Test;
  *
  * @author nino
  */
-public class TrialJsonTest {
+public class JsonConverterTest {
 
     /**
      * convertToMapメソッドのテスト.
@@ -33,7 +33,7 @@ public class TrialJsonTest {
     public void testConvertToMap() throws Exception {
         try {
             String jsonStr = readJsonFileForTest();
-            TrialJson<?> target = new TrialJson<>();
+            JsonConverter<?> target = new JsonConverter<>();
 
             Map<String, Object> jsonMap = target.convertToMap(jsonStr);
             assertThat(jsonMap, is(notNullValue()));
@@ -72,7 +72,7 @@ public class TrialJsonTest {
     public void testConvertToDto() throws Exception {
         try {
             String jsonStr = readJsonFileForTest();
-            TrialJson<TrialRootDto> target = new TrialJson<>();
+            JsonConverter<TrialRootDto> target = new JsonConverter<>();
 
             TrialRootDto dto = target.convertToDto(jsonStr, TrialRootDto.class);
             assertThat(dto, is(notNullValue()));
@@ -85,12 +85,22 @@ public class TrialJsonTest {
             assertThat(dto.getObjectVal().getCc(), is("dd"));
             assertThat(dto.getObjectVal().getEe(), is("ff"));
             assertThat(dto.getStringVal(), is("Hello World"));
+
+            String str = target.convertToStr(dto);
+            System.out.println(str);
+
         } catch (Exception e) {
             e.printStackTrace();
             throw e;
         }
     }
 
+    /**
+     * JSONファイルを読み込みます.
+     * 
+     * @return JSON文字列
+     * @throws IOException 処理に失敗した場合
+     */
     private String readJsonFileForTest() throws IOException {
         InputStream is = ClassLoader.getSystemResourceAsStream("sample.json");
         try (BufferedReader br = new BufferedReader(new InputStreamReader(is))) {

@@ -6,6 +6,11 @@ import java.util.List;
 
 import lombok.Data;
 
+/**
+ * JSON変換DTO ルートクラス.
+ * 
+ * @author nino
+ */
 @Data
 public class TrialRootDto {
 

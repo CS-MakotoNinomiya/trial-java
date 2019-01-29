@@ -2,6 +2,11 @@ package trial.json;
 
 import lombok.Data;
 
+/**
+ * JSON変換DTO 子クラス.
+ * 
+ * @author nino
+ */
 @Data
 public class TrialSubDto {
 
