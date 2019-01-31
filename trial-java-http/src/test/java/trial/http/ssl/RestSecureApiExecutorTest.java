@@ -26,7 +26,7 @@ public class RestSecureApiExecutorTest {
             RestSecureApiExecutor apiExecutor = new RestSecureApiExecutor(reqMgr);
 
             Map<String, String> param = new HashMap<>();
-            param.put("key", "77c7ee6ef935d30d");
+            param.put("key", "ｘｘｘｘ");
             param.put("large_area", "Z011");
             param.put("format", "json");
 
