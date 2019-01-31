@@ -10,7 +10,7 @@ import okhttp3.Response;
 
 import org.junit.Test;
 
-import trial.http.request.ReqruitReqestManager;
+import trial.http.ssl.request.ReqruitReqestManager;
 
 /**
  * RestSecureApiExecutorのテストクラス.

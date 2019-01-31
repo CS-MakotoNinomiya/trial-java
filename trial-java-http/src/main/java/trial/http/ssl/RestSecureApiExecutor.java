@@ -19,7 +19,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import trial.http.RestApiExecutor;
-import trial.http.request.RequestManager;
+import trial.http.ssl.request.RequestManager;
 
 /**
  * REST API (SSL) 実行クラス.

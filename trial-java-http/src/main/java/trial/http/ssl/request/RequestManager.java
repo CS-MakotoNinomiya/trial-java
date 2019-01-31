@@ -1,4 +1,4 @@
-package trial.http.request;
+package trial.http.ssl.request;
 
 import trial.http.ssl.CertificateManager;
 

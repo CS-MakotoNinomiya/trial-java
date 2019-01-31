@@ -1,4 +1,4 @@
-package trial.http.request;
+package trial.http.ssl.request;
 
 /**
  * リクルート用リクエスト管理クラス.
