@@ -29,8 +29,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-
-		<!-- junit -->
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -38,7 +36,6 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
