@@ -12,14 +12,14 @@ import okhttp3.Response;
 
 /**
  * REST API 実行クラス.
- * 
+ *
  * @author nino
  */
 public class RestApiExecutor {
 
     /**
      * プロトコルタイプ.
-     * 
+     *
      * @author nino
      */
     public enum ProtocolType {
@@ -46,20 +46,18 @@ public class RestApiExecutor {
 
     /**
      * コンストラクタ.
-     * 
-     * @param hostname ホスト名
-     * @param segment セグメント
+     *
+     * @param apiAttr API属性
      */
-    public RestApiExecutor(String hostname, String segment) {
-        // ホスト名
-        this.hostname = hostname;
-        // セグメント
-        this.segment = segment;
+    public RestApiExecutor(ApiAttribute apiAttr) {
+        // ホスト名、セグメント
+        this.hostname = apiAttr.getHostname();
+        this.segment = apiAttr.getSegment();
     }
 
     /**
      * REST API (get) を実行します.
-     *  
+     *
      * @param header HTTPヘッダパラメータ
      * @param param クエリパラメータ
      * @param isValidCache キャッシュ使用（true：使用する、false：使用しない）
@@ -85,7 +83,7 @@ public class RestApiExecutor {
 
     /**
      * URLを組み立てます.
-     * 
+     *
      * @param type ProtocolType
      * @param param パラメータ
      * @return HttpUrl.Builderオブジェクト
@@ -108,7 +106,7 @@ public class RestApiExecutor {
 
     /**
      * HTTPヘッダーを組み立てます.
-     * 
+     *
      * @param param パラメータ
      * @return Request.Builderオブジェクト
      */
@@ -123,7 +121,7 @@ public class RestApiExecutor {
 
     /**
      * HTTPクライアントを組み立てます.
-     * 
+     *
      * @param isValidCache キャッシュ使用有無
      * @return OkHttpClient.Builderオブジェクト
      */

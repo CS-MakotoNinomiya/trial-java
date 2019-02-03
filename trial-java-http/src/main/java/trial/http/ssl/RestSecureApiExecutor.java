@@ -19,26 +19,24 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import trial.http.RestApiExecutor;
-import trial.http.ssl.request.RequestManager;
 
 /**
  * REST API (SSL) 実行クラス.
- * 
+ *
  * @author nino
  */
 public class RestSecureApiExecutor extends RestApiExecutor {
 
-    /** 証明書管理オブジェクト. */
     private CertificateManager certMgr;
 
     /**
      * コンストラクタ.
-     * 
-     * @param requestMgr リクエスト管理オブジェクト
+     *
+     * @param apiAttr セキュアAPI属性
      */
-    public RestSecureApiExecutor(RequestManager requestMgr) {
-        super(requestMgr.getHostname(), requestMgr.getSegment());
-        this.certMgr = requestMgr.getCertificateManager();
+    public RestSecureApiExecutor(SecureApiAttribute apiAttr) {
+        super(apiAttr);
+        this.certMgr = apiAttr.getCertMgr();
     }
 
     /**
@@ -68,7 +66,7 @@ public class RestSecureApiExecutor extends RestApiExecutor {
 
     /**
      * builder に CertificatePinner を追加します.
-     * 
+     *
      * @param builder OkHttpClient.Builderオブジェクト
      * @param certificates 証明書情報
      */
@@ -81,7 +79,7 @@ public class RestSecureApiExecutor extends RestApiExecutor {
 
     /**
      * builder に SslSocketFactory を追加します.
-     * 
+     *
      * @param builder OkHttpClient.Builderオブジェクト
      * @param trustManager TrustManager
      */

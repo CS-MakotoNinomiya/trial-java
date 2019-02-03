@@ -10,11 +10,11 @@ import okhttp3.Response;
 
 import org.junit.Test;
 
-import trial.http.ssl.request.ReqruitReqestManager;
+import trial.http.ssl.attr.ReqruitApiAttribute;
 
 /**
  * RestSecureApiExecutorのテストクラス.
- * 
+ *
  * @author nino
  */
 public class RestSecureApiExecutorTest {
@@ -22,11 +22,11 @@ public class RestSecureApiExecutorTest {
     @Test
     public void testGet() throws Exception {
         try {
-            ReqruitReqestManager reqMgr = new ReqruitReqestManager();
-            RestSecureApiExecutor apiExecutor = new RestSecureApiExecutor(reqMgr);
+            ReqruitApiAttribute apiAttr = new ReqruitApiAttribute();
+            RestSecureApiExecutor apiExecutor = new RestSecureApiExecutor(apiAttr);
 
             Map<String, String> param = new HashMap<>();
-            param.put("key", "ｘｘｘｘ");
+            param.put("key", "77c7ee6ef935d30d");
             param.put("large_area", "Z011");
             param.put("format", "json");
 
