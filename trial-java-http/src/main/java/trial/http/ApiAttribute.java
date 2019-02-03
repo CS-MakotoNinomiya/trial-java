@@ -1,7 +1,5 @@
 package trial.http;
 
-import java.util.Map;
-
 import lombok.Data;
 
 /**
@@ -16,8 +14,6 @@ public abstract class ApiAttribute {
     private String hostname;
     /** セグメント. */
     private String segment;
-    /** リクエストパラメータ. */
-    private Map<String, String> params;
 
     /**
      * コンストラクタ.
