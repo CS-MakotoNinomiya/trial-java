@@ -26,7 +26,7 @@ public class RestApiExecutorTest {
         params.put("units", "metric"); // 「摂氏」で固定
         params.put("lon", "135");
         params.put("lat", "35");
-        params.put("appid", "9e156142cc07a547fe564a2e8a82cf9c");
+        params.put("appid", "xxxx");
 
         RestApiExecutor target = new RestApiExecutor(new OpenWeatherMapApiAttribute());
         Response response = target.get(null, params, false);
