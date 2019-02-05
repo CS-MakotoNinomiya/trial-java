@@ -4,7 +4,7 @@ import trial.http.ssl.CertificateManager;
 import trial.http.ssl.SecureApiAttribute;
 
 /**
- * リクルート用API属性クラス.
+ * Qiita用API属性クラス.
  *
  * @author nino
  */
