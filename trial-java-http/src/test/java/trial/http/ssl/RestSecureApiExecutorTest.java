@@ -8,6 +8,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -85,15 +87,15 @@ public class RestSecureApiExecutorTest {
             String responseBody = response.body().string();
             ObjectMapper mapper = new ObjectMapper();
             List<Map<String, Object>> list = mapper.readValue(responseBody, new TypeReference<List<Map<String, Object>>>() {});
-            System.out.println(list.size());
-            System.out.println("タイトル\tURL\tいいねの数\t更新日時");
+            System.out.println("||タイトル||いいねの数||更新日時||");
             for (Map<String, Object> map : list) {
                 String title = (String) map.get("title");
                 String url = (String) map.get("url");
                 Integer likesCnt = (Integer) map.get("likes_count");
                 String updateDt = (String) map.get("updated_at");
+                updateDt = updateDt.substring(0, 10);
 
-                String str = String.format("%s\t%s\t%d\t%s", title, url, likesCnt, updateDt);
+                String str = String.format("|[%s|%s]|%d|%s|", title, url, likesCnt, updateDt);
                 System.out.println(str);
             }
         } catch (Exception e) {
