@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import okhttp3.Response;
 
@@ -38,7 +38,7 @@ public class RestSecureApiExecutorTest {
 
     /**
      * テスト前処理.
-     * 
+     *
      * @throws IOException 処理に失敗した場合
      */
     @BeforeClass
@@ -87,6 +87,12 @@ public class RestSecureApiExecutorTest {
             String responseBody = response.body().string();
             ObjectMapper mapper = new ObjectMapper();
             List<Map<String, Object>> list = mapper.readValue(responseBody, new TypeReference<List<Map<String, Object>>>() {});
+            list = list.stream().sorted(new Comparator<Map<String, Object>>() {
+                @Override
+                public int compare(Map<String, Object> o1, Map<String, Object> o2) {
+                    return ((String) o1.get("title")).compareTo((String) o2.get("title"));
+                }
+            }).collect(Collectors.toList());
             System.out.println("||タイトル||いいねの数||更新日時||");
             for (Map<String, Object> map : list) {
                 String title = (String) map.get("title");
