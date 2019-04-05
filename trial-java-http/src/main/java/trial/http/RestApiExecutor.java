@@ -43,6 +43,8 @@ public class RestApiExecutor {
     protected String hostname;
     /** セグメント. */
     protected String segment;
+    /** ポート番号. */
+    protected Integer port;
 
     /**
      * コンストラクタ.
@@ -50,9 +52,10 @@ public class RestApiExecutor {
      * @param apiAttr API属性
      */
     public RestApiExecutor(ApiAttribute apiAttr) {
-        // ホスト名、セグメント
+        // ホスト名、セグメント、ポート番号
         this.hostname = apiAttr.getHostname();
         this.segment = apiAttr.getSegment();
+        this.port = apiAttr.getPort();
     }
 
     /**
@@ -95,6 +98,10 @@ public class RestApiExecutor {
         builder.scheme(type.getValue());
         // ホスト名
         builder.host(this.hostname);
+        // ポート番号
+        if (this.port != null) {
+            builder.port(this.port);
+        }
         // セグメント
         builder.addPathSegments(this.segment);
         if (param != null) {
