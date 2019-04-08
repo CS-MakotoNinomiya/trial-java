@@ -24,4 +24,17 @@ public abstract class SecureApiAttribute extends ApiAttribute {
         super(hostname, segment);
         this.certMgr = certMgr;
     }
+
+    /**
+     * コンストラクタ.
+     *
+     * @param hostname ホスト名
+     * @param segment セグメント
+     * @param port ポート番号
+     * @param certMgr 証明書管理オブジェクト
+     */
+    public SecureApiAttribute(String hostname, String segment, Integer port, CertificateManager certMgr) {
+        super(hostname, segment, port);
+        this.certMgr = certMgr;
+    }
 }
