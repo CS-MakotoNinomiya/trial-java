@@ -55,7 +55,7 @@ public class RestSecureApiExecutorTest {
             RestSecureApiExecutor apiExecutor = new RestSecureApiExecutor(apiAttr);
 
             Map<String, String> param = new HashMap<>();
-            param.put("key", prop.getProperty("qpi.key.reqruit"));
+            param.put("key", prop.getProperty("api.key.reqruit"));
             param.put("large_area", "Z011");
             param.put("format", "json");
 
