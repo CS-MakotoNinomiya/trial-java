@@ -5,14 +5,14 @@ import java.util.Base64;
 
 /**
  * Base64のお試しクラス.
- * 
+ *
  * @author nino
  */
 public class TrialBase64 {
 
     /**
      * メイン.
-     * 
+     *
      * @param args プログラム引数
      */
     public static void main(String[] args) {
@@ -26,12 +26,12 @@ public class TrialBase64 {
 
     /**
      * 主処理.
-     * 
+     *
      * @param args プログラム引数
      */
     private void execute(String[] args) {
         // エンコードしたい文字列
-        String source = "m.ninomiya@central-soft.co.jp:xxxxx";
+        String source = "m.ninomiya@central-soft.co.jp:::xxxxx";
 
         // エンコード
         String result = encode(source);
@@ -44,7 +44,7 @@ public class TrialBase64 {
 
     /**
      * エンコードします.
-     * 
+     *
      * @param source 対象文字列
      * @return エンコード後の文字列
      */
@@ -56,7 +56,7 @@ public class TrialBase64 {
 
     /**
      * でコードします.
-     * 
+     *
      * @param source 対象文字列
      * @return でコード後の文字列
      */
