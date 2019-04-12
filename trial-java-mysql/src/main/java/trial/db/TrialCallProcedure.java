@@ -27,12 +27,8 @@ public class TrialCallProcedure {
         try {
             List<Callable<Boolean>> taskList = new ArrayList<>();
             for (int i = 0; i < 50; i++) {
-                taskList.add(() -> {
-                    return callProcedureAndUpdatePrefix1();
-                });
-                taskList.add(() -> {
-                    return callProcedureAndUpdatePrefix2();
-                });
+                taskList.add(() -> callProcedureAndUpdatePrefix1());
+                taskList.add(() -> callProcedureAndUpdatePrefix2());
             }
             pool.invokeAll(taskList);
         } catch (InterruptedException e) {
